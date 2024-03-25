@@ -14,14 +14,11 @@
     <link href="assets/dist/css/bootstrap.min.css" rel="stylesheet"> 
     <title> Login || Photogram </title>
 
-    <link href="assets/dist/css/bootstrap.min.css" 
-    rel="stylesheet">
-    <?php print($_SERVER['DOCUMENT_ROOT']) ?>
-    <?php if(file_exists($_SERVER['DOCUMENT_ROOT'].'/app_photo/css/'.basename($_SERVER['PHP_SELF'],".php").".css"))   
+    <?php // print($_SERVER['DOCUMENT_ROOT']) ?>
+    <?php if(file_exists($_SERVER['DOCUMENT_ROOT'].'css/'.basename($_SERVER['PHP_SELF'],".php").".css"));   
     {?>
 
-    <link
-        href="/app_photo/css<?=basename($_SERVER['PHP_SELF'],".php")?>.css"
+    <link href="css/<?=basename($_SERVER['PHP_SELF'],".php")?>.css"
         rel="stylesheet">
         <?php
     }?>
