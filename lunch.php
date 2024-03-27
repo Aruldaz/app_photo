@@ -1,4 +1,5 @@
 <?php
 echo"Lunch pad";
-print("telcin")
+print("telcin");
+echo "new line goes"
 ?>
