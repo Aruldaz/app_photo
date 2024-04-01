@@ -1,4 +1,4 @@
 <?php
 echo"Lunch pad";
-print("telcin");
+print("treply");
 ?>
