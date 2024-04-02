@@ -11,8 +11,32 @@ function validate_credentials($username, $password){
     {
         return false;
     }
+}
 
+function signup($usern, $pass, $email, $phone){
+        $servername = "localhost";
+        $username = "root";
+        $password = "";
+        $dbname = "mydb";
 
+        // Create connection
+        $conn = new mysqli($servername, $username, $password, $dbname);
+        // Check connection
+        if ($conn->connect_error) {
+        die("Connection failed: " . $conn->connect_error);
+        }
+
+        $sql = "INSERT INTO `login` (`username`, `password`, `email`, `phone`, `blocked`, `active`) VALUES ('$usern', '$pass', '$email', '$phone', '0', '1');";
+        $result=false;
+
+        if ($conn->query($sql) === TRUE) {
+        $result=true;
+        } else {
+            $result=false;
+        }
+
+        $conn->close();
+        return $result;
 }
 
 
