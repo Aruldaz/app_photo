@@ -1,6 +1,43 @@
-
+<?php
+// print_r($_POST);
+$signup =false;
+if(isset($_POST['username']) and isset($_POST['pwd']) and isset($_POST['mail_id']) and isset($_POST['phone'])){ 
+$username = $_POST['username'];
+$password = $_POST['pwd'];
+$email = $_POST['mail_id'];
+$phone = $_POST['phone'];
+$result = signup($username, $password, $email, $phone);
+$signup = true;
+}
+?>
+      <?php
+      if($signup){
+        if($result){
+          ?>
+          <main class="container">
+         <div class="bg-body-tertiary p-5 rounded mt-3">
+         <h1>You have been sucussfully signup</h1>
+         <p class="lead">You have been sucussfully signup.<a href="/login.php">here</p>
+        <!-- <a class="btn btn-lg btn-primary" href="/docs/5.3/components/navbar/" role="button">View navbar docs »</a> -->
+         </div>
+        </main>
+      <?php
+        }
+        else{
+        ?>
+        <main class="container">
+       <div class="bg-body-tertiary p-5 rounded mt-3">
+       <h1>Signup fail</h1>
+       <p class="lead">Something went wrong</p>
+       </div>
+      </main>
+    <?php
+        }
+    }else{
+      ?>
   <main class="form-signup w-100 m-auto">
-    <form method="post" action="test.php">
+
+    <form method="post" action="signup.php">
       <img class="mb-4" src="/docs/5.3/assets/brand/bootstrap-logo.svg" alt="" width="72" height="57">
       <h1 class="h3 mb-3 fw-normal">Please sign up</h1>
 
@@ -31,3 +68,5 @@
       <p class="mt-5 mb-3 text-body-secondary">© 2017–2024</p>
     </form>
   </main>
+<?php }
+?>
