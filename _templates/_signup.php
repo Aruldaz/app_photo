@@ -1,40 +1,40 @@
 <?php
 // print_r($_POST);
-$signup =false;
-if(isset($_POST['username']) and isset($_POST['pwd']) and isset($_POST['mail_id']) and isset($_POST['phone'])){ 
-$username = $_POST['username'];
-$password = $_POST['pwd'];
-$email = $_POST['mail_id'];
-$phone = $_POST['phone'];
-$result = signup($username, $password, $email, $phone);
-$signup = true;
+$signup = false;
+if (isset($_POST['username']) and isset($_POST['pwd']) and isset($_POST['mail_id']) and isset($_POST['phone'])) {
+  $username = $_POST['username'];
+  $password = $_POST['pwd'];
+  $email = $_POST['mail_id'];
+  $phone = $_POST['phone'];
+  $error = signup($username, $password, $email, $phone);
+  $signup = true;
 }
 ?>
-      <?php
-      if($signup){
-        if($result){
-          ?>
-          <main class="container">
-         <div class="bg-body-tertiary p-5 rounded mt-3">
-         <h1>You have been sucussfully signup</h1>
-         <p class="lead">You have been sucussfully signup.<a href="/login.php">here</p>
+<?php
+if ($signup) {
+  if (!$error) {
+?>
+    <main class="container">
+      <div class="bg-body-tertiary p-5 rounded mt-3">
+        <h1>You have been sucussfully signup</h1>
+        <p class="lead">You have been sucussfully signup.<a href="/login.php">here</a>.</p>
         <!-- <a class="btn btn-lg btn-primary" href="/docs/5.3/components/navbar/" role="button">View navbar docs »</a> -->
-         </div>
-        </main>
-      <?php
-        }
-        else{
-        ?>
-        <main class="container">
-       <div class="bg-body-tertiary p-5 rounded mt-3">
-       <h1>Signup fail</h1>
-       <p class="lead">Something went wrong</p>
-       </div>
-      </main>
-    <?php
-        }
-    }else{
-      ?>
+      </div>
+    </main>
+  <?php
+  } else {
+  ?>
+    <main class="container">
+      <div class="bg-body-tertiary p-5 rounded mt-3">
+        <h1>Signup fail</h1>
+        <p class="lead">Something went wrong, <?= $error ?>
+        </p>
+      </div>
+    </main>
+  <?php
+  }
+} else {
+  ?>
   <main class="form-signup w-100 m-auto">
 
     <form method="post" action="signup.php">
