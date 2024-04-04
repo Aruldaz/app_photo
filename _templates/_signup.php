@@ -1,5 +1,5 @@
 <?php
-// print_r($_POST);
+print_r($_POST);
 $signup = false;
 if (isset($_POST['username']) and isset($_POST['pwd']) and isset($_POST['mail_id']) and isset($_POST['phone'])) {
   $username = $_POST['username'];
