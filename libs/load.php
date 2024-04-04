@@ -29,7 +29,7 @@ function signup($usern, $pass, $email, $phone)
 
     $sql = "INSERT INTO `login` (`username`, `password`, `email`, `phone`, `blocked`, `active`) VALUES ('$usern', '$pass', '$email', '$phone', '0', '1');";
     $error = false;
-
+    
     if ($conn->query($sql) === TRUE) {
         $error = false;
     } else {
