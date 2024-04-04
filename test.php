@@ -14,6 +14,8 @@ if(signup("arul","123456","arul@gmail.com","0777779890")){
 echo "sucuss";
 }else{
  echo "fails";
+
 }
+
 ?>
 </pre>
