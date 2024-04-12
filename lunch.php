@@ -1,5 +1,5 @@
 <?php
 phpinfo();
-echo "test page _";
+echo "test_";
 
 ?>
