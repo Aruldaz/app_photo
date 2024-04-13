@@ -1,5 +1,5 @@
 <?php
 phpinfo();
-echo "test_";
+echo "test_ version";
 
 ?>
